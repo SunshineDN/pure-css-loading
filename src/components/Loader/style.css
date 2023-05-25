@@ -1,11 +1,17 @@
+.load-container {
+  position: relative;
+  width: 300px;
+  height: 50px;
+}
+
 .loader {
   --path: #2F3545;
   --dot: #5628EE;
   --duration: 3s;
   width: 44px;
   height: 44px;
-  position: relative;
   display: inline-block;
+  position: absolute;
   margin: 0 16px;
 }
 
@@ -68,15 +74,18 @@
 }
 
 .circle {
-  animation: loading-two var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  animation: loading-one 2s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  right: 0;
 }
 
 .triangle {
-  animation: loading-one var(--duration) -2.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  animation: loading-one 2s -2.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  right: 0;
 }
 
 .rect {
-  animation: loading-three var(--duration) -1.8s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  animation: loading-one 2s -5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  right: 0;
 }
 
 @keyframes pathTriangle {
@@ -150,68 +159,20 @@
 
 @keyframes loading-one {
   0% {
-    right: 0;
-  }
-  25% {
-    transform: scale(0.4);
-    right: 80px;
-    z-index: 0;
-  }
-  50% {
-    transform: scale(1);
-    right: 160px;
-  }
-  75% {
-    transform: scale(1.4);
-    right: 80px;
-    z-index: 1;
-  }
-  100% {
-    transform: scale(1);
     right: 0px;
   }
-}
-
-@keyframes loading-two {
-  0% {
-    left: 0;
-  }
-  25% {
-    transform: scale(1.4);
-    left: 80px;
-    z-index: 1;
-  }
-  50% {
-    transform: scale(1);
-    left: 160px;
-  }
-  75% {
-    transform: scale(0.4);
-    left: 80px;
-    z-index: 0;
-  }
-  100% {
-    transform: scale(1);
-    left: 0px;
-  }
-}
-
-@keyframes loading-three {
-  0% {
-    right: 0;
-  }
   25% {
     transform: scale(0.4);
-    right: 80px;
+    right: 37.5%;
     z-index: 0;
   }
   50% {
     transform: scale(1);
-    right: 160px;
+    right: 75%;
   }
   75% {
     transform: scale(1.4);
-    right: 80px;
+    right: 37.5%;
     z-index: 1;
   }
   100% {
